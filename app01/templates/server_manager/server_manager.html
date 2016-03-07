@@ -1,0 +1,40 @@
+{%extends 'index.html'%}
+
+
+
+
+{%block page-content%}
+<br><br><br>
+<br><br><br>
+<div class="navbar navbar-fixed-top">
+<br><br><br>
+
+<div>
+                                <div class="nav-collapse">
+                                        <ul class="nav">
+                                                <li><a href="/server_manager/batch/">Batch</a></li>
+                                                <li><a href="/server_manager/crontab/">Crontab</a></li>
+                                                <li><a href="/server_manager/webshell/">Webshell</a></li>
+                                         <!--       <li><a href="/assets/">4444444444</a></li> -->
+                                        </ul>
+</div>
+<br>
+<br>
+<div style="margin: 20px;">
+{%  for ip in ip_list %}
+    {{ ip.ip }}
+
+{% endfor %}
+                             </div><!--/.nav-collapse -->
+
+</div>
+
+
+
+
+
+
+
+
+
+{%endblock%}

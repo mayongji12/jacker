@@ -1,0 +1,61 @@
+
+{%block page-content%}
+
+ <script type="text/javascript" src="http://cdn.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
+ <script src="/static/bootstrap/js/highcharts.js"></script>
+ <script src="/static/bootstrap/js/data.js"></script>
+ <script src="/static/bootstrap/js/data1.js"></script>
+ <script src="/static/bootstrap/js/data2.js"></script>
+ <script src="/static/bootstrap/js/data3.js"></script>
+<br>
+<br>
+<br>
+<div id="dict">Ajax 加载字典</div>
+<p id="dict_result"></p>
+ 
+<div id="list">Ajax 加载列表</div>
+<p id="list_result"></p>
+ 
+<script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+ 
+<script>
+	 $(document).ready(function(){
+      // 列表 list
+      $('#list').click(function(){
+          $.getJSON('/ajax_list/',function(ret){
+            //返回值 ret 在这里是一个列表
+            for (var i = ret.length - 1; i >= 0; i--) {
+              // 把 ret 的每一项显示在网页上
+              $('#list_result').append(' ' + ret[i])
+            };
+          })
+      })
+ 
+      // 字典 dict
+      $('#dict').click(function(){
+          $.getJSON('/ajax_dict/',function(ret){
+              //返回值 ret 在这里是一个字典
+              $('#dict_result').append(ret.twz + '<br>');
+              // 也可以用 ret['twz']
+          })
+      })
+    });
+</script>
+
+
+
+
+
+        <style>  
+            html,body { margin:0px; height:100%; }  
+        </style>  
+    </head>  
+      
+    <body>  
+        <div id="container5" style="min-width: 400px; height: 80%; margin: 0 auto">  
+        </div>  
+    </body>  
+
+
+
+{%endblock%}

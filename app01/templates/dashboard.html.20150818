@@ -1,0 +1,63 @@
+{%extends 'index.html'%}
+
+{%block page-content%}
+
+ <script type="text/javascript" src="/static/bootstrap/js/jquery-1.9.1.js"></script>
+ <script src="/static/bootstrap/js/highcharts.js"></script>
+ <script src="/static/bootstrap/js/cpu-idle.js"></script>
+ <script src="/static/bootstrap/js/data1.js"></script>
+ <script src="/static/bootstrap/js/swap-stat.js"></script>
+ <script src="/static/bootstrap/js/data3.js"></script>
+<br>
+<br>
+<br>
+<li>This is dashboard page</li>
+<h1>This page use to show import server's status screen</h1>
+<div class="accordion">
+				<div class="accordion-group">
+					<div class="accordion-heading">
+						<a class="accordion-toggle collapsed" data-toggle="collapse" href="#cpu">CPU Used</a>
+					</div>
+					<div class="accordion-body collapse" id="cpu">
+						<div class="accordion-inner">
+							CPU Screen
+							<div id="cpuidle" style="min-width:700px;height:300px"></div>
+						</div>
+					</div>
+				</div>
+				<div class="accordion-group">
+					<div class="accordion-heading">
+						<a class="accordion-toggle collapsed" data-toggle="collapse" href="#accordion-element-911563">Disk IO</a>
+					</div>
+					<div class="accordion-body collapse" id="accordion-element-911563">
+						<div class="accordion-inner">
+							Disk IO screen
+							<div id="container1" style="min-width:700px;height:300px"></div>
+						</div>
+					</div>
+				</div>
+				<div class="accordion-group">
+					<div class="accordion-heading">
+						<a class="accordion-toggle collapsed" data-toggle="collapse" href="#accordion-element-911564">MEM</a>
+					</div>
+					<div class="accordion-body collapse" id="accordion-element-911564">
+						<div class="accordion-inner">
+							MEM screen
+							<div id="swapused" style="min-width:700px;height:300px"></div>
+						</div>
+					</div>
+				</div>
+				<div class="accordion-group">
+					<div class="accordion-heading">
+						<a class="accordion-toggle collapsed" data-toggle="collapse" href="#accordion-element-911565">QPS</a>
+					</div>
+					<div class="accordion-body collapse" id="accordion-element-911565">
+						<div class="accordion-inner">
+							QPS Screen
+							<div id="container3" style="min-width:700px;height:300px"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+{%endblock%}

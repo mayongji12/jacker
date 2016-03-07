@@ -1,0 +1,28 @@
+{%extends 'index.html'%}
+
+
+ <script type="text/javascript" src="http://cdn.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
+
+
+{%block page-content%}
+<br><br><br>
+<li>This is Server-manager page</li>
+<h1>Just take it</h1>
+<ul class="nav nav-tabs" contenteditable="true">
+	<li><a href="/batch/">Batch</a></li>
+	<li><a href="/crontab/">Crontab</a></li>
+	<li><a href="/webshell/">Webshell</a></li>
+	
+	
+</ul>
+
+{%block page-content-in%}
+{%  for ip in ip_list %}
+    {{ ip.ip }}
+
+{% endfor %}
+
+
+{%endblock%}
+
+{%endblock%}

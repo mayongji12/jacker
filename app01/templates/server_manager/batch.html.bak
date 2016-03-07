@@ -1,0 +1,35 @@
+{%extends 'index.html'%}
+
+
+
+
+{%block page-content%}
+<br><br><br>
+<br><br><br>
+<div class="navbar navbar-fixed-top">
+<br><br><br>
+
+                                <div class="nav-collapse">
+                                        <ul class="nav">
+                                                <li><a href="/server_manager/batch/">Batch</a></li>
+                                                <li><a href="/server_manager/crontab/">Crontab</a></li>
+                                                <li><a href="/server_manager/webshell/">Webshell</a></li>
+                                         <!--       <li><a href="/assets/">4444444444</a></li> -->
+                                        </ul>
+                             </div><!--/.nav-collapse -->
+<br>
+<br>
+<div style="margin: 20px;">
+<li>used to batch server</li>
+
+</div>
+
+
+<div>
+
+
+
+
+
+
+{%endblock%}

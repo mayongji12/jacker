@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>	
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GBK">  
+<title> Highcharts + Ajax + Servlet Demo </title>  
+<script type="text/javascript" src="http://cdn.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
+<script src="/static/bootstrap/js/highcharts.js"></script>
+
+<script type="text/javascript">  
+  $(function() {  
+      $('#container5').highcharts({  
+          chart: {  
+              type: 'spline',  
+              marginRight: 150,  
+              marginLeft: 150,  
+              marginBottom: 25,  
+              animation: Highcharts.svg,  
+                          
+              events: {  
+                  load: function() {  
+                  var series_cpu = this.series[0];  
+                  var series_mem = this.series[1];  
+                  setInterval(function() {  
+                      jQuery.getJSON('/ajax_list/', null,  
+                          function(data) {  
+                              var x = (new Date()).getTime();
+                              var cpu = data.cpu;  
+                              var mem = data.mem;  
+                              series_cpu.addPoint([x, cpu], true, true);  
+                              series_mem.addPoint([x, mem], true, true);  
+                                   });  
+                                         });  
+                                   }  
+                  },  
+          title: {  
+              test: 'percent(%)',
+              x: -20  
+                 },  
+          xAxis: {  
+              type: 'datetime',  
+              tickPixelInterval: 150  
+                 },  
+          yAxis: {  
+              title: {  
+                  text: 'percent(%)'
+                     },  
+              plotLines: [{  
+              value: 0,  
+              width: 1,  
+              color: '#808080'  
+                          }]  
+                 },  
+          tooltip: {  
+              valueSuffix: '%'  
+                   },  
+          legend: {  
+              layout: 'vertical',  
+              align: 'right',  
+              verticalAlign: 'top',  
+              x: -10,  
+              y: 100,  
+              borderWidth: 0  
+                  },  
+          series: [  
+          {  
+              name: 'CPU',  
+              data: (function() {  
+                  var data = [],  
+                  time = (new Date()).getTime(),  
+                  i;  
+                  for (i = -9; i <= 0; i++) {  
+                      data.push({  
+                          x: time + i * 1000,  
+                          cpu: 0  
+                                });  
+                                            }  
+                  return data;  
+                                })()  
+             },  
+ {  
+               name: 'memory',  
+               data: (function() {  
+                   var data = [],  
+                   time = (new Date()).getTime(),  
+                   i;  
+  
+                   for (i = -9; i <= 0; i++) {  
+                       data.push({  
+                           x: time + i * 1000,  
+                           y: 0  
+                                 });  
+                                             }  
+                   return data;  
+                                  })()  
+},  
+                    ]  
+                }});  
+            });  
+        </script>  
+        <style>  
+            html,body { margin:0px; height:100%; }  
+        </style>  
+    </head>  
+      
+    <body>  
+        <div id="container5" style="min-width: 400px; height: 80%; margin: 0 auto">  
+        </div>  
+    </body>  
+<html>
+
+
+
+</html>

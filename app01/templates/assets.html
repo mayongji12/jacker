@@ -1,0 +1,19 @@
+{%extends 'index.html'%}
+
+{%block page-content%}
+
+ <script type="text/javascript" src="http://cdn.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
+
+
+<br>
+<br>
+<br>
+<li>This is Assets page</li>
+{%for ip in ip_list%}
+{{ip.hostname}}<br/>
+
+{%endfor%}
+<h1>This page use to control assets</h1>
+
+
+{%endblock%}

@@ -1,0 +1,161 @@
+{%extends 'index.html'%}
+
+
+
+
+{%block page-content%}
+<br><br><br>
+<br><br><br>
+<div class="navbar navbar-fixed-top">
+<br><br><br>
+
+                                <div class="nav-collapse">
+                                        <ul class="nav">
+                                                <li><a href="/server_manager/batch/">Batch</a></li>
+                                                <li><a href="/server_manager/crontab/">Crontab</a></li>
+                                                <li><a href="/server_manager/webshell/">Webshell</a></li>
+                                         <!--       <li><a href="/assets/">4444444444</a></li> -->
+                                        </ul>
+
+
+<!--<div class="row">
+  <div class="col-lg-6">
+    <div class="input-group">
+      <span class="input-group-addon">
+        <input type="checkbox">
+      </span>
+      <input type="text" class="form-control">
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+  <div class="col-lg-6">
+    <div class="input-group">
+      <span class="input-group-addon">
+        <input type="radio">
+      </span>
+      <input type="text" class="form-control">
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</div><!-- /.row -->
+
+-->
+                             </div><!--/.nav-collapse -->
+<br>
+<br>
+<div style="margin: 20px;">
+<li>used to batch server</li>
+
+</div>
+
+
+<div>
+        <h1 id="page-header">Server Management > File Transfer </h1>
+        <div class="fluid-container">
+                <!-- widget grid -->
+                        <!-- row-fluid -->
+                        <div class="row-fluid">
+                                <!-- article -->
+                                <article class="span12">
+                                        <!-- new widget -->
+                                        <div class="jarviswidget" id="widget-id-2">
+                                            <header>
+                                                <div class="jarviswidget-editbox">
+                                                    <div>
+                                                        <label>Title:</label>
+                                                        <input type="text" />
+                                                    </div>
+                                                        <span data-widget-setstyle="red" class="red-btn"></span>
+                                                        <span data-widget-setstyle="darkgrey" class="darkgrey-btn"></span>
+                                                </div>
+<div class="control-group">
+                                                                                                <option>SendFile</ooption>
+                                                                                </div>
+
+                                                                                        <div style="height:70%;position:absolute">
+                                                                                                        <ul id="tree1"></ul>
+                                                                                                </div>
+<div id="fileTransferDiv" style="position:relative;float:right;width:68%;height:100%;border:1px solid #ccc">
+                                                                                                        </select>
+                                                                                                        <br />
+                                                                                        </div>
+                                                                                                <br />
+                                                                                        </div>
+                                                                                                </select>
+                                                                                                <br />
+                                                                                        </div>
+                                                                                <div class="control-group">
+                                                                </form>
+                                                    </div>
+                                                    <!-- end content-->
+                                            </div>
+                                            <!-- end wrap div -->
+                                        </div>
+                                        <!-- end widget -->
+                                        <div class="jarviswidget" id="widget-id-3">
+                                            <header>
+                                                        <h2>Execution Results</h2>
+                                            </header>
+                                            <!-- wrap div -->
+                                            <div>
+                                                <div class="jarviswidget-editbox">
+                                                    <div>
+                                                        <label>Title:</label>
+                                                        <input type="text" />
+                                                    </div>
+                                                    <div>
+                                                        <label>Styles:</label>
+                                                        <span data-widget-setstyle="purple" class="purple-btn"></span>
+                                                        <span data-widget-setstyle="navyblue" class="navyblue-btn"></span>
+                                                        <span data-widget-setstyle="green" class="green-btn"></span>
+                                                        <span data-widget-setstyle="yellow" class="yellow-btn"></span>
+                                                        <span data-widget-setstyle="orange" class="orange-btn"></span>
+                                                        <span data-widget-setstyle="pink" class="pink-btn"></span>
+                                                        <span data-widget-setstyle="red" class="red-btn"></span>
+                                                        <span data-widget-setstyle="darkgrey" class="darkgrey-btn"></span>
+                                                        <span data-widget-setstyle="black" class="black-btn"></span>
+                                                    </div>
+                                                </div>
+                        <div class="tabbable"> <!-- Only required for left/right tabs -->
+                                <ul class="nav nav-tabs">
+                                        <li><a href="#execution_success" data-toggle="tab">Number of Success:<span class="badge badge-success" id="successnum">0</span></a></li>
+                                        <li><a href="#execution_failed" data-toggle="tab">Number of Failure:<span class="badge badge-warning" id="failednum">0</span></a></li>
+                                </ul>
+                                <div class="tab-content">
+                                        <div class="tab-pane active" id="execution_process">
+                                          <pre style="max-height:500px"></pre>
+                                        </div>
+                                        <div class="tab-pane" id="execution_success">
+                                          <p style="max-height:500px"></p>
+                                        </div>
+                                        <div class="tab-pane" id="execution_failed">
+                                          <p style="max-height:500px"></p>
+                                        </div>
+                                </div>
+                        </div>
+
+                                            </div>
+                                            <!-- end wrap div -->
+                                        </div>
+                                        <!-- end widget -->
+                                </article>
+                                <!-- end article-->
+                        </div>
+                        <!-- end row-fluid -->
+                </section>
+                <!-- end widget grid -->
+        </div>
+        <div id="dialog-confirm" style="display:none" title="Execute command">
+        <p>
+                <span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span>
+                <span id="dialog_body"><span>
+        </p>
+        </div>
+</div>
+<!-- end main content -->
+<script src="/static/js/include/command_exec_core.js" type="text/javascript"></script>
+<script src="/static/js/include/file_transfer.js" type="text/javascript"></script>
+
+
+
+
+
+{%endblock%}

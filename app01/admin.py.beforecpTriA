@@ -1,0 +1,10 @@
+from django.contrib import admin
+from django.contrib.admin.widgets import FilteredSelectMultiple
+from django.contrib.auth.models import User as djangouser,Group as djangogroup
+from app01.models import *
+#from django.contrib.sites models import Site as djangosite
+#import logging.config,logging,logging.handlers
+#import models
+#import admin_ip,admin_user,admin_auth
+
+admin.site.register(IP)
